@@ -18,7 +18,10 @@ const launches = ({ data }) => {
     <>
       <Search />
       {launches.slice(0, 15).map((launch) => (
-        <Link key={launch.id} href={`/launches/${launch.flight_number}`}>
+        <Link
+          key={launch.flight_number}
+          href={`/launches/${launch.flight_number}`}
+        >
           <h1>{launch.mission_name}</h1>
         </Link>
       ))}

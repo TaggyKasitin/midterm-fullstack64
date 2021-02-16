@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Link from "next/link";
-import { LaunchesProvider } from "../contexts/LaunchesContext";
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
@@ -12,6 +11,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
+        <Link href={"/rockets"}>Rockets</Link>
         <Link href={"/launches"}>Launches</Link>
       </main>
     </div>

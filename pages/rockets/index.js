@@ -1,8 +1,7 @@
 import { useState } from "react";
 
-const rocket = ({ data, cost_hight }) => {
+const rocket = ({ data }) => {
   const [name, setName] = useState("");
-  // console.log(data);
   console.log(name);
   return (
     <>
@@ -19,7 +18,6 @@ const rocket = ({ data, cost_hight }) => {
 export async function getStaticProps() {
   const res = await fetch(`https://api.spacexdata.com/v3/rockets`);
   const data = await res.json();
-  const cost_hight = data.filter((da) => da.cost_per_launch > 7000000);
 
   return {
     props: {

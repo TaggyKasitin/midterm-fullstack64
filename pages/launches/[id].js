@@ -8,8 +8,6 @@ function LaunchesDetail({ launches }) {
       <span onClick={() => router.back()}>Click go back</span>
     </>
   );
-
-  // Render post...
 }
 
 // This function gets called at build time
@@ -29,10 +27,8 @@ export async function getStaticProps({ params }) {
   );
   const launches = await res.json();
 
-  // Pass post data to the page via props
   return {
     props: { launches },
-    // Re-generate the post at most once per second
   };
 }
 
