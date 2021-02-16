@@ -9,10 +9,7 @@ export default function Search() {
           <div>
             <input onChange={(e) => setName(e.target.value)} />
             <input onChange={(e) => setYarn(e.target.value)} />
-            <select
-              value={launchSuc}
-              onChange={(e) => setLaunchSuc(e.target.value)}
-            >
+            <select onChange={(e) => setLaunchSuc(e.target.value)}>
               <option name="all" value="All">
                 All
               </option>
