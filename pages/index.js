@@ -1,19 +1,15 @@
-import Head from "next/head";
 import Link from "next/link";
+import Layout from "../component/Layout";
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
+    <Layout>
       <main className={styles.main}>
+        <h2>Home</h2>
         <Link href={"/rockets"}>Rockets</Link>
         <Link href={"/launches"}>Launches</Link>
       </main>
-    </div>
+    </Layout>
   );
 }

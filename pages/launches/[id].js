@@ -1,12 +1,13 @@
 import { useRouter } from "next/router";
+import Layout from "../../component/Layout";
 
 function LaunchesDetail({ launches }) {
   const router = useRouter();
   return (
-    <>
+    <Layout>
       <h1>{launches.mission_name}</h1>
       <span onClick={() => router.back()}>Click go back</span>
-    </>
+    </Layout>
   );
 }
 

@@ -1,17 +1,19 @@
-import { useState } from "react";
+import Link from "next/link";
+import Layout from "../../component/Layout";
 
 const rocket = ({ data }) => {
-  const [name, setName] = useState("");
-  console.log(name);
   return (
-    <>
-      <input onChange={(e) => setName(e.target.value)} />
+    <Layout>
       {data.map((roc) => (
-        <div key={roc.id}>
-          <h1>{roc.rocket_name}</h1>
-        </div>
+        <Link key={roc.rocket_id} href={`/rockets/${roc.rocket_id}`}>
+          <div>
+            <h1>{roc.rocket_name}</h1>
+            <p>{roc.description}</p>
+            <h4>Price : {roc.cost_per_launch}</h4>
+          </div>
+        </Link>
       ))}
-    </>
+    </Layout>
   );
 };
 
@@ -22,7 +24,6 @@ export async function getStaticProps() {
   return {
     props: {
       data,
-      cost_hight,
     },
   };
 }
