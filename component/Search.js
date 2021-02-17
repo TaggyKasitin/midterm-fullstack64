@@ -9,7 +9,7 @@ export default function Search() {
           <div>
             <label>Rocket Name</label>
             <input onChange={(e) => setName(e.target.value)} />
-            <label>Yarn</label>
+            <label>Year</label>
             <input onChange={(e) => setYarn(e.target.value)} />
             <select onChange={(e) => setLaunchSuc(e.target.value)}>
               <option name="all" value="All">

@@ -5,7 +5,7 @@ const Navbar = () => {
   const router = useRouter();
   console.log(router.pathname);
   return (
-    <div>
+    <div style={{width: "100%", borderBottom: "1px solid #aaa"}}>
       <ul>
         <li className={router.pathname == "/" ? "active" : ""}>
           <Link href="/">
@@ -25,21 +25,23 @@ const Navbar = () => {
       </ul>
       <style jsx>{`
         ul {
-          background: #333;
+          // background: #333;
           color: #fff;
           list-style: none;
           display: flex;
         }
         ul li {
           font-size: 18px;
-          margin-right: 20px;
+          margin-right: 60px;
         }
         ul li a {
           color: #fff;
           text-decoration: none;
         }
         .active {
-          background: #ff1100;
+          // background: blue;
+          border-bottom: 6px solid currentColor;
+          // line-height: 3;
         }
       `}</style>
     </div>
