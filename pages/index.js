@@ -6,11 +6,6 @@ export default function Home() {
   return (
     <Layout>
       <>
-        <div className={box}>
-          <div className={card}>
-            <Image src="/spaceXpic3.jpg" layout="fill" />
-          </div>
-        </div>
         <div style={{ marginBottom: "3%" }}>
           <h1 style={{ color: "#fff" }}>What is SpaceX ?</h1>
           <p style={{ color: "#fff", textIndent: "2rem" }}>
@@ -22,7 +17,7 @@ export default function Home() {
             Dragon cargo spacecraft and the Starlink satellite constellation
           </p>
         </div>
-        {/* <div className={styles.frame_image}>
+        <div className={styles.frame_image}>
           <Image
             src="/spaceXpic2.jpg"
             width={450}
@@ -41,7 +36,7 @@ export default function Home() {
             height={320}
             className="image"
           />
-        </div> */}
+        </div>
       </>
       <style jsx global>{`
         .image {

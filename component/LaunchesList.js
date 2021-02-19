@@ -49,7 +49,7 @@ const LaunchesList = ({ Launches }) => {
 
   return (
     <>
-      <Search />
+      {/* <Search /> */}
       <div className={boxCard}>
         {launches.slice(start, end).map((launch) => (
           <div key={launch.flight_number}>
@@ -57,7 +57,11 @@ const LaunchesList = ({ Launches }) => {
           </div>
         ))}
       </div>
-      <h3 ref={ref}>Loading Posts...</h3>
+      {Launches.length > end ? (
+        <h3 ref={ref}>Loading Posts...</h3>
+      ) : (
+        <h1>The end</h1>
+      )}
     </>
   );
 };
