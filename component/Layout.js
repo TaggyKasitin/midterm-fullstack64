@@ -5,20 +5,31 @@ import Image from "next/image";
 
 const Layout = (props) => (
   <div className={styles.container}>
-    {/* <Head>
+    <Head>
       <title>Create Next App</title>
+      <meta charSet="UTF-8" />
       <link rel="icon" href="/favicon.ico" />
-    </Head> */}
-    <div  style={{marginTop: 10, marginLeft: 10, marginBottom: 0, justifyContent: "flex-start"}}>
+    </Head>
+    {/* <div
+      style={{
+        marginTop: 10,
+        marginLeft: 10,
+        marginBottom: 0,
+        justifyContent: "flex-start",
+      }}
+    >
       <Image
-          src={"/spaceXlogo.png"}
-          width={500}
-          height={50}
-          alt="Super Rocket"
-        />
+        src={"/spaceXlogo.png"}
+        width={500}
+        height={50}
+        alt="Super Rocket"
+      />
+    </div> */}
+    {/* <Navbar /> */}
+    <div style={{ justifyContent: "center", display: "flex" }}>
+      <Image src="/spaceXpic1.png" width={400} height={150} quality={100} />
     </div>
-    <Navbar />
-    {props.children}
+    <div className={styles.main}>{props.children}</div>
   </div>
 );
 export default Layout;

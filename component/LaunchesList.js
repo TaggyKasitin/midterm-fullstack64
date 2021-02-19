@@ -1,15 +1,16 @@
-import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { useLaunches } from "../contexts/LaunchesContext";
+import LaunchesCard from "./LaunchesCard";
 import Search from "./Search";
+import { boxCard } from "../styles/Launches.module.css";
 
 const LaunchesList = ({ Launches }) => {
   const { name, yarn, launchSuc } = useLaunches();
   const [page, setPage] = useState(1);
   const perPage = 20;
   let start = 0;
-  let end = page * perPage;
   const ref = useRef();
+  let end = page * perPage;
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -49,26 +50,14 @@ const LaunchesList = ({ Launches }) => {
   return (
     <>
       <Search />
-      <ul>
+      <div className={boxCard}>
         {launches.slice(start, end).map((launch) => (
-          <Link
-            key={launch.flight_number}
-            href={`/launches/${launch.flight_number}`}
-          >
-            <li style={{ height: 200 }}>
-              {launch.mission_name},{launch.rocket.rocket_name},{" "}
-              {launch.flight_number}
-            </li>
-          </Link>
+          <div key={launch.flight_number}>
+            <LaunchesCard launch={launch} />
+          </div>
         ))}
-      </ul>
-      {launches.length > end ? (
-        <h3 ref={ref}>Loading Posts...</h3>
-      ) : (
-        <Link href="/launches">
-          <a>to the top</a>
-        </Link>
-      )}
+      </div>
+      <h3 ref={ref}>Loading Posts...</h3>
     </>
   );
 };

@@ -8,6 +8,7 @@ module.exports = {
 
     return config;
   },
+
   images: {
     domains: [
       "imgur.com",
@@ -21,6 +22,7 @@ module.exports = {
       "farm8.staticflickr.com",
       "farm9.staticflickr.com",
       "live.staticflickr.com",
+      "images2.imgbox.com",
     ],
   },
 };

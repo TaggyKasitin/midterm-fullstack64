@@ -3,9 +3,8 @@ import { useRouter } from "next/router";
 
 const Navbar = () => {
   const router = useRouter();
-  console.log(router.pathname);
   return (
-    <div style={{width: "100%", borderBottom: "1px solid #aaa"}}>
+    <div style={{ width: "100vw", borderBottom: "1px solid #aaa" }}>
       <ul>
         <li className={router.pathname == "/" ? "active" : ""}>
           <Link href="/">

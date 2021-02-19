@@ -1,18 +1,10 @@
-import Link from "next/link";
 import Layout from "../../component/Layout";
+import RocketCard from "../../component/RocketCard";
 
 const rocket = ({ data }) => {
   return (
     <Layout>
-      {data.map((roc) => (
-        <Link key={roc.rocket_id} href={`/rockets/${roc.rocket_id}`}>
-          <div>
-            <h1>{roc.rocket_name}</h1>
-            <p>{roc.description}</p>
-            <h4>Price : {roc.cost_per_launch}</h4>
-          </div>
-        </Link>
-      ))}
+      <RocketCard rocket={data} />
     </Layout>
   );
 };

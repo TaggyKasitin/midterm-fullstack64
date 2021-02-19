@@ -1,0 +1,62 @@
+.bgWrap {
+    position: relative;
+    width: 100%;
+    height: 580px;
+    z-index: -1;    
+    
+  }
+
+.text { 
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* after 3 line show ... */
+    -webkit-box-orient: vertical;
+    overflow: hidden; 
+    text-overflow: ellipsis;
+}
+
+.textHead{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.boxText{
+    position:absolute;
+    opacity:0;
+    z-index: 2;
+    width: 60%;
+    top: 70%;
+    left: 5%;
+}
+
+.box{
+    position: relative;
+    z-index: 2;
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.box:hover{
+    cursor: pointer;
+}
+.box:hover .bgWrap{
+    opacity: 0.2;
+}
+
+.box:hover .boxText {
+    opacity:1;
+    color: red;
+}
+
+@media(max-width: 925px){
+    .bgWrap{
+        height: 420px;
+    }
+}
+
+@media(max-width: 625px){
+    .bgWrap{
+        height: 400px;
+    }
+}
+

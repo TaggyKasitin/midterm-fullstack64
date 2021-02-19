@@ -1,6 +1,7 @@
 import LaunchesList from "../../component/LaunchesList";
 import Layout from "../../component/Layout";
 const launches = ({ data }) => {
+  // console.log(data);
   return (
     <Layout>
       <LaunchesList Launches={data} />
@@ -9,7 +10,7 @@ const launches = ({ data }) => {
 };
 
 export async function getStaticProps() {
-  const res = await fetch(`https://api.spacexdata.com/v3/launches/`);
+  const res = await fetch(`https://api.spacexdata.com/v3/launches`);
   const data = await res.json();
   return {
     props: {
