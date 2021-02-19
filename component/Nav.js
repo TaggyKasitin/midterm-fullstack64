@@ -1,48 +1,24 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { menu, activeMenu, nav, inMenu } from "../styles/Home.module.css";
 
 const Navbar = () => {
   const router = useRouter();
   return (
-    <div style={{ width: "100vw", borderBottom: "1px solid #aaa" }}>
-      <ul>
-        <li className={router.pathname == "/" ? "active" : ""}>
-          <Link href="/">
-            <a>Main page</a>
-          </Link>
-        </li>
-        <li className={router.pathname == "/launches" ? "active" : ""}>
-          <Link href="/launches">
-            <a>Launches</a>
-          </Link>
-        </li>
-        <li className={router.pathname == "/rockets" ? "active" : ""}>
-          <Link href="/rockets">
-            <a>Rockets</a>
-          </Link>
-        </li>
-      </ul>
-      <style jsx>{`
-        ul {
-          // background: #333;
-          color: #fff;
-          list-style: none;
-          display: flex;
-        }
-        ul li {
-          font-size: 18px;
-          margin-right: 60px;
-        }
-        ul li a {
-          color: #fff;
-          text-decoration: none;
-        }
-        .active {
-          // background: blue;
-          border-bottom: 6px solid currentColor;
-          // line-height: 3;
-        }
-      `}</style>
+    <div className={nav}>
+      <Link href="/">
+        <a className={router.pathname == "/" ? activeMenu : menu}>Main page</a>
+      </Link>
+      <Link href="/launches">
+        <a className={router.pathname == "/launches" ? activeMenu : menu}>
+          Launches
+        </a>
+      </Link>
+      <Link href="/rockets">
+        <a className={router.pathname == "/rockets" ? activeMenu : menu}>
+          Rockets
+        </a>
+      </Link>
     </div>
   );
 };

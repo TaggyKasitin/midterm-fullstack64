@@ -26,27 +26,87 @@
   justify-content: space-between;
 }
 
+.logo {
+  width: 40vw;
+}
+
+.menu{
+  position: relative;
+  width: 250px;
+  height: 50px;
+  background: #232323;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 50px;
+  color: #FF0;
+  font-size: 1.5rem;
+  font-family: verdana;
+  letter-spacing: 0.2rem;
+}
+
+
+.activeMenu{
+  position: relative;
+  width: 250px;
+  height: 50px;
+  background: #ff0;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 50px;
+  color: #232323;
+  font-size: 1.5rem;
+  font-family: verdana;
+  letter-spacing: 0.2rem;
+}
+
+.menu:hover {
+  cursor: pointer;
+  border: 2px solid #FF0;
+  transition: all 0.3s ease;
+}
+
+
+.nav{
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 1em;
+  text-align: center;
+}
+
+@media(max-width: 875px){
+  .logo{
+    width: 50vw;
+  }
+  .menu{
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+  }
+  .activeMenu{
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+  }
+}
+
 @media(max-width: 575px){
   .container{
     padding: 0 0;
   }
+  .logo{
+    width: 60vw;
+  }
 }
 
-/* .code {
-  background: #fafafa;
-  border-radius: 5px;
-  padding: 0.75rem;
-  font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
-} */
-
-
-
-/* @media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
+@media(max-width: 400px){
+  .menu{
+    font-size: 0.6rem;
   }
-} */
+  .activeMenu{
+    font-size: 0.6rem;
+  }
+}
+
 

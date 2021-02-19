@@ -7,6 +7,9 @@ import {
   cardBack,
   innerBox,
   hid,
+  text,
+  butLm,
+  hText,
 } from "../styles/Launches.module.css";
 
 const LaunchesCard = ({ launch }) => {
@@ -28,11 +31,12 @@ const LaunchesCard = ({ launch }) => {
         />
       </div>
       <div className={showBack ? cardBack : hid}>
-        <h1>John Doe</h1>
-        <p>Architect & Engineer</p>
-        <p>We love that guy</p>
+        <h1 className={hText}>{launch.mission_name}</h1>
+        <p className={text}>
+          {launch.details == null ? "No Detail. " : launch.details}
+        </p>
         <Link href={`/launches/${launch.flight_number}`}>
-          <button>Detail</button>
+          <button className={butLm}>Learn More</button>
         </Link>
       </div>
       {/* {launch.mission_name},{launch.rocket.rocket_name},{" "}

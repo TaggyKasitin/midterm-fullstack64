@@ -24,8 +24,7 @@
   margin-top: 20px;
   z-index: 0;
   transition: transform 0.6s;
-  transform-style: preserve-3d;
-  
+  transform-style: preserve-3d;  
 }
 .box:hover{
   box-shadow: 0.7em 0.8em 1.7em rgba(255, 255, 255, 0.8);
@@ -34,6 +33,29 @@
 .hid{
   display: none;
 }
+
+.hText{
+  font-size: 1.5rem;
+}
+
+.text{
+  margin: 0;
+  font-size: 1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden; 
+  text-overflow: ellipsis;
+}
+
+.butLm{
+  font-size: 1rem;
+  position:absolute;
+  bottom: 10%;
+}
+/* .fill{
+  transform: rotateY(180deg);
+} */
 
 .cardBack{
   z-index: 1;
@@ -53,37 +75,65 @@
 
 @media(max-width: 1155px){
   .box{
-    width: 220px;
-    height: 230px;
+    width: 230px;
+    height: 250px;
   }
 }
 
-@media(max-width: 995px){
+@media(max-width: 1025px){
+  .box{
+    width: 200px;
+    height: 220px;
+  }
+  .hText{
+    font-size: 1.2rem;
+  }
+  .text{
+    font-size: 0.8rem;
+  }
+  .butLm{
+    font-size: 0.8rem;
+  }
+}
+
+@media(max-width: 925px){
   .box{
     width: 180px;
     height: 200px;
   }
+  .hText{
+    font-size: 1rem;
+  }
+  .text{
+    font-size: 0.7rem;
+  }
+  .butLm{
+    font-size: 0.7rem;
+  }
 }
 
-@media(max-width: 820px){
+@media(max-width: 825px){
   .box{
     width: 160px;
     height: 180px;
   }
 }
 
-@media(max-width: 740px){
+
+@media(max-width: 745px){
   .box{
-    width: 140px;
+    width: 150px;
     height: 160px;
+    margin: 0.5rem 0.5rem;
   }
-}
-
-
-@media(max-width: 640px){
-  .box{
-    width: 120px;
-    height: 140px;
+  .hText{
+    font-size: 0.9rem;
+  }
+  .text{
+    font-size: 0.65rem;
+  }
+  .butLm{
+    font-size: 0.7rem;
   }
 }
 
@@ -92,9 +142,17 @@
     width: 38vw;
     height: 40vw;
     padding: 3vw;
-    margin: 0.5rem 0.5rem;
   }
   .boxCard{
     margin: 0 0.9rem;
+  }
+  .hText{
+    font-size: 4vw;
+  }
+  .text{
+    font-size: 2.5vw;
+  }
+  .butLm{
+    font-size: 2.5vw;
   }
 }
