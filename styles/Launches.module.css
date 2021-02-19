@@ -27,6 +27,10 @@
   transform-style: preserve-3d;
   
 }
+.box:hover{
+  box-shadow: 0.7em 0.8em 1.7em rgba(255, 255, 255, 0.8);
+}
+
 .hid{
   display: none;
 }

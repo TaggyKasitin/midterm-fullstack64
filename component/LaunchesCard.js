@@ -18,7 +18,6 @@ const LaunchesCard = ({ launch }) => {
 
   console.log(showBack);
   return (
-    // <Link href={`/launches/${launch.flight_number}`}>
     <div className={box} onClick={showBack ? close : open}>
       <div className={showBack ? hid : card}>
         <Image
@@ -32,12 +31,13 @@ const LaunchesCard = ({ launch }) => {
         <h1>John Doe</h1>
         <p>Architect & Engineer</p>
         <p>We love that guy</p>
-        {/* <button onClick={close}>Close</button> */}
+        <Link href={`/launches/${launch.flight_number}`}>
+          <button>Detail</button>
+        </Link>
       </div>
       {/* {launch.mission_name},{launch.rocket.rocket_name},{" "}
         {launch.flight_number} */}
     </div>
-    // </Link>
   );
 };
 
