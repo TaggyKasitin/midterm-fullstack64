@@ -1,25 +1,54 @@
 import { useRouter } from "next/router";
 import Image from "next/image";
 import Layout from "../../component/Layout";
+import Header from "../../component/Header";
+import TextDetails from "../../component/TextDetails";
+import { boxText, boxImg, imgSty } from "../../styles/Detail.module.css";
 const rocketDetail = ({ rocket }) => {
   const router = useRouter();
+  function formatN(num) {
+    return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
+  }
   console.log(rocket);
   return (
     <Layout>
-      <h1>{rocket.rocket_name}</h1>
-      <h2>{rocket.cost_per_launch}</h2>
-      <Image
-        src={rocket.flickr_images[0]}
-        width={800}
-        height={600}
-        alt="Super Rocket"
-      />
-      <p>{rocket.description}</p>
-      <a href={rocket.wikipedia} target="_blank">
-        wikipedia
-      </a>
-      <br />
-      <span onClick={() => router.back()}>Click go back</span>
+      <Header titleText="Details" />
+      <div className={boxText}>
+        <TextDetails title="Rocket name" text={rocket.rocket_name} />
+        <TextDetails title="Fast flight" text={rocket.first_flight} />
+        <TextDetails title="Country" text={rocket.country} />
+        <TextDetails
+          title="Cost per launch"
+          text={formatN(rocket.cost_per_launch)}
+        />
+        <TextDetails title="Active" boo={rocket.active} />
+      </div>
+      <Header titleText="Overview" />
+      <div className={boxText}>
+        <TextDetails title="Height" text={`${rocket.height.meters} Meters`} />
+        <TextDetails
+          title="Diameter"
+          text={`${rocket.diameter.meters} Meters`}
+        />
+        <TextDetails
+          title="Mass"
+          text={`${formatN(rocket.mass.kg)} kilogram`}
+        />
+        {rocket.payload_weights.map((payload) => (
+          <TextDetails
+            title={`Payload to ${payload.id}`}
+            text={`${formatN(payload.kg)} kilogram`}
+          />
+        ))}
+      </div>
+      <Header titleText="Photo" />
+      <div className={boxImg}>
+        {rocket.flickr_images.map((imgs) => (
+          <div className={imgSty}>
+            <Image src={imgs} layout="fill" alt="Super Rocket" />
+          </div>
+        ))}
+      </div>
     </Layout>
   );
 };

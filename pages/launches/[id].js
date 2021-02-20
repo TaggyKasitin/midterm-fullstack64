@@ -2,24 +2,22 @@ import { useRouter } from "next/router";
 import Layout from "../../component/Layout";
 import {
   boxText,
-  head,
-  line,
   subText,
   failTask,
   video,
-  title,
   img,
   boxImg,
   arrowLeft,
   goRocket,
   textBtn,
-} from "../../styles/LaunchesDetail.module.css";
+} from "../../styles/Detail.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import Header from "../../component/Header";
+import TextDetails from "../../component/TextDetails";
 
 function LaunchesDetail({ launches }) {
   const router = useRouter();
-  console.log(launches);
   const date_time = (launches.launch_date_local + "").split("T")[0];
   return (
     <Layout>
@@ -31,66 +29,40 @@ function LaunchesDetail({ launches }) {
           <Image src={launches.links.mission_patch} layout="fill" />
         </div>
       </div>
-      <div className={head}>
-        <h1 className={title}>Detail</h1>
-        <div className={line}></div>
-      </div>
+      <Header titleText="Details" />
 
       <div className={boxText}>
-        <h1>
-          Mission name: <span className={subText}>{launches.mission_name}</span>
-        </h1>
-        <h1>
-          Date: <span className={subText}>{date_time}</span>
-        </h1>
-        <h1>
-          Rockets:{" "}
-          <span className={subText}>
-            {launches.rocket.rocket_name}, Type {launches.rocket.rocket_type}
-          </span>
-        </h1>
-        <h1>
-          Site:{" "}
-          <span className={subText}>{launches.launch_site.site_name}</span>
-        </h1>
+        <TextDetails title="Mission name" text={launches.mission_name} />
+        <TextDetails title="Date" text={date_time} />
+        <TextDetails
+          title="Rockets"
+          text={`${launches.rocket.rocket_name}, Type ${launches.rocket.rocket_type}`}
+        />
+        <TextDetails title="Site" text={launches.launch_site.site_name} />
         {launches.details == null ? (
           ""
         ) : (
-          <h1>
-            Details: <span className={subText}>{launches.details}</span>
-          </h1>
+          <TextDetails title="Details" text={launches.details} />
         )}
-
-        <h1>
-          Results:{" "}
-          <span style={{ textTransform: "capitalize" }} className={subText}>
-            {launches.launch_success + ""}
-          </span>
-        </h1>
+        <TextDetails title="Results" boo={launches.launch_success} />
 
         {launches.launch_success ? (
           ""
         ) : (
           <div className={failTask}>
             <h1>Failure detail</h1>
-            <h1>
-              reason:{" "}
-              <span className={subText}>
-                {launches.launch_failure_details.reason}
-              </span>
-            </h1>
-            <h1>
-              Altitude:{" "}
-              <span className={subText}>
-                {launches.launch_failure_details.altitude}
-              </span>
-            </h1>
-            <h1>
-              Times:{" "}
-              <span className={subText}>
-                {launches.launch_failure_details.time}s
-              </span>
-            </h1>
+            <TextDetails
+              title="Reason"
+              text={launches.launch_failure_details.reason}
+            />
+            <TextDetails
+              title="Altitude"
+              text={launches.launch_failure_details.altitude}
+            />
+            <TextDetails
+              title="Times"
+              text={launches.launch_failure_details.time}
+            />
           </div>
         )}
         <Link href={`/rockets/${launches.rocket.rocket_id}`}>
@@ -99,10 +71,7 @@ function LaunchesDetail({ launches }) {
           </div>
         </Link>
       </div>
-      <div className={head}>
-        <h1 className={title}>Video</h1>
-        <div className={line}></div>
-      </div>
+      <Header titleText="Video" />
       <div className={video}>
         <iframe
           width="80%"
@@ -110,10 +79,7 @@ function LaunchesDetail({ launches }) {
           src={`https://www.youtube.com/embed/${launches.links.youtube_id}`}
         ></iframe>
       </div>
-      <div className={head}>
-        <h1 className={title}>More Information</h1>
-        <div className={line}></div>
-      </div>
+      <Header titleText="More Information" />
       <div className={boxText}>
         <h1>
           News:{" "}

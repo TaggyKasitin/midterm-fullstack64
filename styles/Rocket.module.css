@@ -9,44 +9,75 @@
 .text { 
     margin: 0;
     display: -webkit-box;
-    -webkit-line-clamp: 2; /* after 3 line show ... */
+    -webkit-line-clamp: 5; /* after 3 line show ... */
     -webkit-box-orient: vertical;
     overflow: hidden; 
     text-overflow: ellipsis;
 }
 
-.textHead{
-    font-size: 1.5rem;
-    font-weight: bold;
+
+
+
+.boxCard{
+    display: flex;
+    justify-content: center;
 }
 
-.boxText{
-    position:absolute;
-    opacity:0;
-    z-index: 2;
-    width: 60%;
-    top: 70%;
-    left: 5%;
+.course {
+	background-color: #fff;
+	border-radius: 10px;
+	box-shadow: 13px 15px 25px  rgb(0, 0, 0);
+	display: flex;
+	max-width: 100%;
+	margin: 20px;
+	overflow: hidden;
+	width: 700px;
 }
 
-.box{
-    position: relative;
-    z-index: 2;
-    opacity: 1;
+.btn {
+    cursor: pointer;
+	border: 0;
+	border-radius: 50px;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+    background-color: rgb(35 35 35);
+    color: #ff0;
+	font-size: 16px;
+	padding: 12px 25px;
+	position: absolute;
+	bottom: 30px;
+	right: 30px;
+	letter-spacing: 1px;
     transition: 0.5s;
 }
 
-.box:hover{
-    cursor: pointer;
-}
-.box:hover .bgWrap{
-    opacity: 0.2;
+.btn:hover{
+	background-color: #ff0;
+	color: rgb(35 35 35);
 }
 
-.box:hover .boxText {
-    opacity:1;
-    color: red;
+.coursePre {
+    position: relative;
+	color: #fff;
+    width:370px;
+    height: 320px;
+	/* max-width: 250px; */
 }
+
+.courseInfo {
+	padding: 30px;
+	position: relative;
+	width: 100%;
+}
+
+
+.course-preview {
+	background-color: #2A265F;
+	color: #fff;
+	padding: 30px;
+	max-width: 250px;
+}
+
+
 
 @media(max-width: 925px){
     .bgWrap{

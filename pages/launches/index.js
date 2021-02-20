@@ -1,7 +1,6 @@
 import LaunchesList from "../../component/LaunchesList";
 import Layout from "../../component/Layout";
 const launches = ({ data }) => {
-  // console.log(data);
   return (
     <Layout>
       <LaunchesList Launches={data} />

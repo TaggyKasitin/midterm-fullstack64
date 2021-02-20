@@ -83,3 +83,17 @@
 .textBtn{
     text-shadow:  0.15rem 0.15rem rgba(0, 0, 0, 0.6);
 }
+
+.boxImg{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.imgSty{
+    position: relative;
+    height: 20vw;
+    width: 32vw;
+    margin: 1vw 0;
+}

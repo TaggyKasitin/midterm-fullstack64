@@ -10,12 +10,25 @@ const Navbar = () => {
         <a className={router.pathname == "/" ? activeMenu : menu}>Main page</a>
       </Link>
       <Link href="/launches">
-        <a className={router.pathname == "/launches" ? activeMenu : menu}>
+        <a
+          className={
+            router.pathname == "/launches" ||
+            router.pathname == "/launches/[id]"
+              ? activeMenu
+              : menu
+          }
+        >
           Launches
         </a>
       </Link>
       <Link href="/rockets">
-        <a className={router.pathname == "/rockets" ? activeMenu : menu}>
+        <a
+          className={
+            router.pathname == "/rockets" || router.pathname == "/rockets/[id]"
+              ? activeMenu
+              : menu
+          }
+        >
           Rockets
         </a>
       </Link>

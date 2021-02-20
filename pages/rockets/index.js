@@ -2,6 +2,7 @@ import Layout from "../../component/Layout";
 import RocketCard from "../../component/RocketCard";
 
 const rocket = ({ data }) => {
+  console.log(data);
   return (
     <Layout>
       <RocketCard rocket={data} />

@@ -1,11 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
-  bgWrap,
+  course,
+  coursePre,
+  courseInfo,
+  boxCard,
   text,
-  boxText,
-  box,
-  textHead,
+  btn,
 } from "../styles/Rocket.module.css";
 
 const RocketCard = ({ rocket }) => {
@@ -13,14 +14,24 @@ const RocketCard = ({ rocket }) => {
     <>
       {rocket.map((roc) => (
         <Link key={roc.rocket_id} href={`/rockets/${roc.rocket_id}`}>
-          <div className={box}>
-            <div className={bgWrap}>
-              <Image src={roc.flickr_images[1]} layout={"fill"} />
-            </div>
-            <div className={boxText}>
-              <span className={textHead}>{roc.rocket_name}</span>
-              <p className={text}>{roc.description}</p>
-              {/* <button>Go</button> */}
+          <div className={boxCard}>
+            <div className={course}>
+              <div className={coursePre}>
+                {roc.rocket_id == "falcon1" ? (
+                  <Image src="/Falcon-1.jpg" layout="fill" objectFit="cover" />
+                ) : (
+                  <Image
+                    src={roc.flickr_images[1]}
+                    layout="fill"
+                    objectFit="cover"
+                  />
+                )}
+              </div>
+              <div className={courseInfo}>
+                <h2>{roc.rocket_name}</h2>
+                <p className={text}>{roc.description}</p>
+                <button className={btn}>Learn More</button>
+              </div>
             </div>
           </div>
         </Link>
