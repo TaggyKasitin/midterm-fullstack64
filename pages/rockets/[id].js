@@ -4,7 +4,6 @@ import Layout from "../../component/Layout";
 const rocketDetail = ({ rocket }) => {
   const router = useRouter();
   console.log(rocket);
-  console.log(rocket.flickr_images[0]);
   return (
     <Layout>
       <h1>{rocket.rocket_name}</h1>

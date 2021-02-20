@@ -23,12 +23,7 @@ const LaunchesCard = ({ launch }) => {
   return (
     <div className={box} onClick={showBack ? close : open}>
       <div className={showBack ? hid : card}>
-        <Image
-          src={launch.links.mission_patch_small}
-          //   width={250}
-          //   height={250}
-          layout="fill"
-        />
+        <Image src={launch.links.mission_patch_small} layout="fill" />
       </div>
       <div className={showBack ? cardBack : hid}>
         <h1 className={hText}>{launch.mission_name}</h1>

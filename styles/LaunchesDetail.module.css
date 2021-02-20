@@ -1,0 +1,85 @@
+.head{
+    margin: 1rem 0;
+}
+.title{
+    margin: 0;
+    font-size: 3rem;
+    letter-spacing: 0.4rem;
+    color: #fff;
+}
+
+.line{
+    width: 100%;
+    height: 0.5vw;
+    background-color: #ff0;
+}
+
+.boxText{
+    color: white;
+}
+
+.subText{
+    font-weight: 100;
+}
+
+.failTask{
+    padding: 0.5rem;
+    border: 1px solid #FF0000;
+}
+
+.video{
+    display: flex;
+    justify-content: center;
+}
+
+.img{
+  width: 260px;
+  height: 270px;
+  position: relative;
+}
+.boxImg{
+    display: flex;
+    justify-content: center;
+}
+
+.arrowLeft{
+    position: absolute;
+    margin-left: 1rem;
+    cursor: pointer;
+    border: solid #fff;
+    border-width: 0 11px 11px 0;
+    display: inline-block;
+    padding: 12px;
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+
+.arrowLeft:hover{
+    position: absolute;
+    cursor: pointer;
+    border: solid #ff0;
+    border-width: 0 11px 11px 0;
+    display: inline-block;
+    padding: 13px;
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+
+.goRocket{
+    cursor: pointer;
+    margin-top: 10px;
+    width: 250px;
+    padding: 0.5rem;
+    background-color: #ff0;
+    text-align: center;
+    color: #fff;
+}
+
+.goRocket:hover{
+    background-color: #fff;
+    color: #ff0;
+}
+
+.textBtn{
+    text-shadow:  0.15rem 0.15rem rgba(0, 0, 0, 0.6);
+}

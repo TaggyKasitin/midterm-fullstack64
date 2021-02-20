@@ -9,25 +9,15 @@ const Layout = (props) => (
       <meta charSet="UTF-8" />
       <link rel="icon" href="/favicon.ico" />
     </Head>
-    {/* <div
-      style={{
-        marginTop: 10,
-        marginLeft: 10,
-        marginBottom: 0,
-        justifyContent: "flex-start",
-      }}
-    >
-      <Image
-        src={"/spaceXlogo.png"}
-        width={500}
-        height={50}
-        alt="Super Rocket"
-      />
-    </div> */}
-
     <div className="boxLogo">
       <div className={logo}>
-        <svg x="0px" y="0px" viewBox="0 0 400 50">
+        <svg
+          x="0px"
+          y="0px"
+          viewBox="0 0 400 50"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <title>Logo</title>
           <g>
             <path
