@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
-import LaunchesList from "../../component/LaunchesList";
-const Layout = dynamic(import("../../component/Layout"));
+import Layout from "../../component/Layout";
+const LaunchesList = dynamic(import("../../component/LaunchesList"));
 
 const launches = ({ data }) => {
   return (

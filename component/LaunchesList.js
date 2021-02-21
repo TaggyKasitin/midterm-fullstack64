@@ -4,7 +4,7 @@ import { boxCard } from "../styles/Launches.module.css";
 import { load, boxLoad } from "../styles/Launches.module.css";
 import { line } from "../styles/Detail.module.css";
 import dynamic from "next/dynamic";
-import LaunchesCard from "./LaunchesCard";
+const LaunchesCard = dynamic(import("./LaunchesCard"));
 const Search = dynamic(import("./Search"));
 
 const LaunchesList = ({ Launches }) => {

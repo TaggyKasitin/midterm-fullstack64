@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { menu, activeMenu, nav, inMenu } from "../styles/Home.module.css";
+import { menu, activeMenu, nav } from "../styles/Home.module.css";
 
 const Navbar = () => {
   const router = useRouter();
@@ -11,7 +11,7 @@ const Navbar = () => {
       </Link>
       <Link href="/launches">
         <a className={router.pathname == "/launches" ? activeMenu : menu}>
-          <span> Launches</span>
+          Launches
         </a>
       </Link>
       <Link href="/rockets">

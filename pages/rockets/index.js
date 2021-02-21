@@ -1,5 +1,5 @@
 import dynamic from "next/dynamic";
-const Layout = dynamic(import("../../component/Layout"));
+import Layout from "../../component/Layout";
 const RocketCard = dynamic(import("../../component/RocketCard"));
 const rocket = ({ data }) => {
   return (
