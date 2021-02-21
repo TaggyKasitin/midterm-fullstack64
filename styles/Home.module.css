@@ -111,7 +111,7 @@
   }
 }
 
-@media(max-width: 675px){
+@media(max-width: 765px){
   .container{
     padding: 0 3vw;
   }
@@ -125,14 +125,14 @@
 
 @media(max-width: 400px){
   .menu{
-    font-size: 4vw;
+    /* font-size: 4vw; */
     width: 35vw;
-    height: 3rem;
+    max-height: 15vw;
   }
   .activeMenu{
-    font-size: 4vw;
+    /* font-size: 4vw; */
     width: 35vw;
-    height: 3rem;
+    max-height: 15vw;
   }
 }
 

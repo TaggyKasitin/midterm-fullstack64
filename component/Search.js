@@ -18,6 +18,7 @@ export default function Search() {
                 type="text"
                 className={inputBox}
                 placeholder="Rocket Name"
+                onChange={(e) => setName(e.target.value)}
               />
             </div>
             <div className={inputData}>
@@ -25,6 +26,7 @@ export default function Search() {
                 type="number"
                 className={inputBox}
                 placeholder="Year ex. 2010"
+                onChange={(e) => setYarn(e.target.value)}
               />
             </div>
             <select
@@ -42,23 +44,6 @@ export default function Search() {
               </option>
             </select>
           </div>
-          // <div>
-          //   <label>Rocket Name</label>
-          //   <input onChange={(e) => setName(e.target.value)} />
-          //   <label>Year</label>
-          //   <input onChange={(e) => setYarn(e.target.value)} />
-          //   <select onChange={(e) => setLaunchSuc(e.target.value)}>
-          //     <option name="all" value="All">
-          //       All
-          //     </option>
-          //     <option name="true" value="true">
-          //       True
-          //     </option>
-          //     <option name="false" value="false">
-          //       False
-          //     </option>
-          //   </select>
-          // </div>
         );
       }}
     </LaunchesConsumer>

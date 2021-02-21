@@ -108,6 +108,7 @@
   width: 150px;
   background: rgb(26, 26, 26);
   font-size: 17px;
+  border: 2px solid rgb(26, 26, 26);
   border-bottom: 2px solid #ff0;
 }
 .load{
@@ -232,6 +233,9 @@
   }
   .butLm{
     font-size: 2.5vw;
+  }
+  .wrapper{
+    padding: 5vw;
   }
 }
 

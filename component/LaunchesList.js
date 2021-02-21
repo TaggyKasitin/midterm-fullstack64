@@ -58,7 +58,7 @@ const LaunchesList = ({ Launches }) => {
           </div>
         ))}
       </div>
-      {Launches.length > end ? (
+      {launches.length > end ? (
         <div className={boxLoad} ref={end > 120 ? null : ref}>
           <div className={load}></div>
         </div>

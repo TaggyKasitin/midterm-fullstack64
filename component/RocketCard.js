@@ -13,28 +13,29 @@ const RocketCard = ({ rocket }) => {
   return (
     <>
       {rocket.map((roc) => (
-        <Link key={roc.rocket_id} href={`/rockets/${roc.rocket_id}`}>
-          <div className={boxCard}>
-            <div className={course}>
-              <div className={coursePre}>
-                {roc.rocket_id == "falcon1" ? (
-                  <Image src="/Falcon-1.jpg" layout="fill" objectFit="cover" />
-                ) : (
-                  <Image
-                    src={roc.flickr_images[1]}
-                    layout="fill"
-                    objectFit="cover"
-                  />
-                )}
-              </div>
-              <div className={courseInfo}>
-                <h2>{roc.rocket_name}</h2>
-                <p className={text}>{roc.description}</p>
+        <div className={boxCard} key={roc.rocket_id}>
+          <div className={course}>
+            <div className={coursePre}>
+              {roc.rocket_id == "falcon1" ? (
+                <Image src="/Falcon-1.jpg" layout="fill" objectFit="cover" />
+              ) : (
+                <Image
+                  src={roc.flickr_images[1]}
+                  layout="fill"
+                  objectFit="cover"
+                />
+              )}
+            </div>
+
+            <div className={courseInfo}>
+              <h2>{roc.rocket_name}</h2>
+              <p className={text}>{roc.description}</p>
+              <Link href={`/rockets/${roc.rocket_id}`}>
                 <button className={btn}>Learn More</button>
-              </div>
+              </Link>
             </div>
           </div>
-        </Link>
+        </div>
       ))}
     </>
   );

@@ -11,7 +11,7 @@ const Navbar = () => {
       </Link>
       <Link href="/launches">
         <a className={router.pathname == "/launches" ? activeMenu : menu}>
-          Launches
+          <span> Launches</span>
         </a>
       </Link>
       <Link href="/rockets">

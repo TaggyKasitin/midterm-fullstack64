@@ -1,7 +1,6 @@
 import Layout from "../component/Layout";
-import styles, { card, box } from "../styles/Home.module.css";
 import Image from "next/image";
-import { image, lineH } from "../styles/Home.module.css";
+import { image, lineH, Timg } from "../styles/Home.module.css";
 
 export default function Home() {
   return (
@@ -57,7 +56,7 @@ export default function Home() {
             manned flights.
           </p>
         </div>
-        <div className={styles.Timg}>
+        <div className={Timg}>
           <Image
             src="/spaceXpic2.jpg"
             width={500}
@@ -75,14 +74,6 @@ export default function Home() {
           SpaceX Headquarters: Hawthorne, California, U.S
         </p>
         <br />
-        <div className={styles.Timg}>
-          {/* <Image
-            src="/spaceXpic3.jpg"
-            width={600}
-            height={450}
-            className="image"
-          /> */}
-        </div>
       </>
     </Layout>
   );

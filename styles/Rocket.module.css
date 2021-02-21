@@ -41,7 +41,6 @@
 	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
     background-color: rgb(35 35 35);
     color: #ff0;
-	font-size: 16px;
 	padding: 12px 25px;
 	position: absolute;
 	bottom: 30px;
@@ -60,7 +59,6 @@
 	color: #fff;
     width:370px;
     height: 320px;
-	/* max-width: 250px; */
 }
 
 .courseInfo {
@@ -70,29 +68,53 @@
 }
 
 
-.course-preview {
-	background-color: #2A265F;
-	color: #fff;
-	padding: 30px;
-	max-width: 250px;
-}
-
 
 
 @media(max-width: 925px){
     .bgWrap{
         height: 420px;
     }
+    .coursePre {
+        width:370px;
+        height: 300px;
+    }
+    .courseInfo {
+        padding: 1.5rem;
+    }
+    .text { 
+        -webkit-line-clamp: 4;
+    }
+    
 }
 
 @media(max-width: 625px){
     .bgWrap{
         height: 400px;
     }
+    .coursePre {
+        height: 45vw;
+    }
+    .courseInfo {
+        padding: 3vw;
+    }
+    .btn {
+        padding: 1.5vw 2vw;
+        position: absolute;
+        bottom: 2.5vw;
+        right: 2.5vw;
+        letter-spacing: 1px;
+        font-size: 0.8rem;
+    }
+    .text { 
+        -webkit-line-clamp: 3;
+    }
 }
 
 @media(max-width: 425px){
     .bgWrap{
         height: 12rem;
+    }
+    .text { 
+        -webkit-line-clamp: 2;
     }
 }
