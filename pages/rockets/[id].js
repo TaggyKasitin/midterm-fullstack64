@@ -55,7 +55,7 @@ const rocketDetail = ({ rocket }) => {
       <Header titleText="Photo" />
       <div className={boxImg}>
         {rocket.flickr_images.map((imgs) => (
-          <div className={imgSty}>
+          <div key={imgs} className={imgSty}>
             <Image src={imgs || ""} layout="fill" alt="Super Rocket" />
           </div>
         ))}
