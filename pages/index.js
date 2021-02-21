@@ -51,29 +51,29 @@ export default function Home() {
         <div className={styles.Timg}>
           <Image
             src="/spaceXpic2.jpg"
-            width={600}
-            height={450}
+            width={500}
+            height={375}
             className="image"
           />
-        </div>
+        {/* </div>
         <p style={{marginBottom: "0.5%"}}> </p>
-        <div className={styles.Timg}>
+        <div className={styles.Timg}> */}
           <Image
             src="/spaceXpic4.jpg"
-            width={600}
-            height={450}
+            width={500}
+            height={375}
             className="image"
           />
         </div>
         <p style={{marginBottom: "0.5%", color: "#fff", textAlign: "center"}}>SpaceX Headquarters: Hawthorne, California, U.S</p>
         <br/>
         <div className={styles.Timg}>
-          <Image
+          {/* <Image
             src="/spaceXpic3.jpg"
             width={600}
             height={450}
             className="image"
-          />
+          /> */}
         </div>
       </>
       <style jsx global>{`
