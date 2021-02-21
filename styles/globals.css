@@ -16,3 +16,10 @@ a {
   box-sizing: border-box;
   font-size: 1.1rem;
 }
+
+
+@media(max-width:575px){
+  *{
+    font-size: 4vw;
+  }
+}

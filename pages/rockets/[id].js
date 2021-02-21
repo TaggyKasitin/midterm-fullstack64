@@ -1,6 +1,12 @@
 import { useRouter } from "next/router";
 import Image from "next/image";
-import { boxText, boxImg, imgSty } from "../../styles/Detail.module.css";
+import {
+  boxText,
+  boxImg,
+  imgSty,
+  arrowLeft,
+  rockHead,
+} from "../../styles/Detail.module.css";
 import dynamic from "next/dynamic";
 const Header = dynamic(import("../../component/Header"));
 const TextDetails = dynamic(import("../../component/TextDetails"));
@@ -13,6 +19,10 @@ const rocketDetail = ({ rocket }) => {
   }
   return (
     <Layout>
+      <span onClick={() => router.back()}>
+        <i className={arrowLeft}></i>
+      </span>
+      <h1 className={rockHead}>{rocket.rocket_name}</h1>
       <Header titleText="Details" />
       <div className={boxText}>
         <TextDetails title="Rocket name" text={rocket.rocket_name} />

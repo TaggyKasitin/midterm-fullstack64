@@ -54,7 +54,6 @@ const LaunchesList = ({ Launches }) => {
       <div className={boxCard}>
         {launches.slice(start, end).map((launch) => (
           <div key={launch.flight_number}>
-            {/* <h1>{launch.mission_name}</h1> */}
             <LaunchesCard launch={launch} />
           </div>
         ))}

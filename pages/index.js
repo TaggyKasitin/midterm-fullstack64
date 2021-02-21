@@ -1,20 +1,7 @@
 import Layout from "../component/Layout";
 import styles, { card, box } from "../styles/Home.module.css";
 import Image from "next/image";
-import {
-  boxText,
-  head,
-  lineH,
-  subText,
-  failTask,
-  video,
-  title,
-  img,
-  boxImg,
-  arrowLeft,
-  goRocket,
-  textBtn,
-} from "../styles/LaunchesDetail.module.css";
+import { image, lineH } from "../styles/Home.module.css";
 
 export default function Home() {
   return (
@@ -73,18 +60,15 @@ export default function Home() {
         <div className={styles.Timg}>
           <Image
             src="/spaceXpic2.jpg"
-            width={600}
-            height={450}
-            className="image"
+            width={500}
+            height={375}
+            className={image}
           />
-        </div>
-        <p style={{ marginBottom: "0.5%" }}> </p>
-        <div className={styles.Timg}>
           <Image
             src="/spaceXpic4.jpg"
-            width={600}
-            height={450}
-            className="image"
+            width={500}
+            height={375}
+            className={image}
           />
         </div>
         <p style={{ marginBottom: "0.5%", color: "#fff", textAlign: "center" }}>
@@ -92,20 +76,14 @@ export default function Home() {
         </p>
         <br />
         <div className={styles.Timg}>
-          <Image
+          {/* <Image
             src="/spaceXpic3.jpg"
             width={600}
             height={450}
             className="image"
-          />
+          /> */}
         </div>
       </>
-      <style jsx global>{`
-        .image {
-          border-radius: 5%;
-          text-align: center;
-        }
-      `}</style>
     </Layout>
   );
 }

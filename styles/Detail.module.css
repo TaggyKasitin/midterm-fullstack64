@@ -27,9 +27,14 @@
     border: 1px solid #FF0000;
 }
 
-.video{
+.boxVideo{
     display: flex;
     justify-content: center;
+}
+
+.video{    
+    width: 700px;
+    height: 450px;
 }
 
 .img{
@@ -96,4 +101,67 @@
     height: 20vw;
     width: 32vw;
     margin: 1vw 0;
+}
+
+.rockHead{
+    text-align: center;
+    color: #ff0;
+    font-size:4.5rem;
+    text-shadow:  0.5rem 0.5rem 0.3rem rgba(0, 0, 0);
+    letter-spacing: 0.75rem;
+    margin: 2.5rem 4rem;
+}
+
+@media(max-width:925px){
+    .goRocket{
+        width: 230px;
+        padding: 0.4rem;
+    }
+    .video{    
+        width: 600px;
+        height: 350px;
+    }
+    
+    .title{
+        font-size: 2rem;
+    }
+
+    .rockHead{
+        font-size:3rem;
+        letter-spacing: 0.5rem;
+    }
+}
+
+@media(max-width:625px){
+    .rockHead{
+        font-size:2.5rem;
+        letter-spacing: 0.5rem;
+        margin: 2.5rem 3.5rem;
+    }
+    .img{
+        width: 56vw;
+        height: 56vw;
+        position: relative;
+      }
+    .goRocket{
+        width: 40vw;
+        padding: 0.3rem;
+    }
+    .video{    
+        width: 500px;
+        height: 280px;
+    }
+    .title{
+        font-size: 7.5vw;
+    }
+    .arrowLeft{
+        margin-left: 4vw;
+        border-width: 0 1.5vw 1.5vw 0;
+        padding: 2vw;
+    }
+    .arrowLeft:hover{
+        margin-left: 4vw;
+        border-width: 0 1.5vw 1.5vw 0;
+        padding: 2vw;
+    }
 }

@@ -8,6 +8,17 @@
   padding: 0 15vw;
 }
 
+.image {
+  border-radius: 5%;
+  text-align: center;
+}
+
+.lineH{
+  width: 100%;
+  height: 0.3vw;
+  background-color: #fff;
+}
+
 
 .main {
   flex: 1;
@@ -100,9 +111,9 @@
   }
 }
 
-@media(max-width: 575px){
+@media(max-width: 675px){
   .container{
-    padding: 0 0;
+    padding: 0 3vw;
   }
   .logo{
     width: 60vw;
@@ -127,8 +138,6 @@
 
 .Timg {
   display: flex;
-  /* flex-direction: row; */
-  justify-content: center;
-  /* padding: 100px;
-  box-shadow: 13px 15px 25px  rgb(0, 0, 0); */
+  justify-content: space-between;
+  width: 100%;
 }

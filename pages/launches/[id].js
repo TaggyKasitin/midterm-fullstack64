@@ -3,12 +3,13 @@ import {
   boxText,
   subText,
   failTask,
-  video,
   img,
   boxImg,
   arrowLeft,
   goRocket,
   textBtn,
+  video,
+  boxVideo,
 } from "../../styles/Detail.module.css";
 import Image from "next/image";
 import Link from "next/link";
@@ -56,26 +57,39 @@ function LaunchesDetail({ launches }) {
         ) : (
           <TextDetails title="Details" text={launches.details} />
         )}
-        <TextDetails title="Results" boo={launches.launch_success} />
 
-        {launches.launch_success ? (
+        {launches.launch_success || launches.launch_success == null ? (
           ""
         ) : (
-          <div className={failTask}>
-            <h1>Failure detail</h1>
-            <TextDetails
-              title="Reason"
-              text={launches.launch_failure_details?.reason || ""}
-            />
-            <TextDetails
-              title="Altitude"
-              text={launches.launch_failure_details?.altitude}
-            />
-            <TextDetails
-              title="Times"
-              text={launches.launch_failure_details?.time}
-            />
-          </div>
+          <>
+            <h1>
+              Results:
+              {launches.launch_success ? (
+                <span className={subText} style={{ color: "green" }}>
+                  &nbsp;True
+                </span>
+              ) : (
+                <span className={subText} style={{ color: "red" }}>
+                  &nbsp;False
+                </span>
+              )}
+            </h1>
+            <div className={failTask}>
+              <h1>Failure detail</h1>
+              <TextDetails
+                title="Reason"
+                text={launches.launch_failure_details?.reason || ""}
+              />
+              <TextDetails
+                title="Altitude"
+                text={launches.launch_failure_details?.altitude}
+              />
+              <TextDetails
+                title="Times"
+                text={launches.launch_failure_details?.time}
+              />
+            </div>
+          </>
         )}
         <Link href={`/rockets/${launches.rocket.rocket_id}`}>
           <div className={goRocket}>
@@ -84,12 +98,14 @@ function LaunchesDetail({ launches }) {
         </Link>
       </div>
       <Header titleText="Video" />
-      <div className={video}>
-        <iframe
-          width="80%"
-          height="450"
-          src={`https://www.youtube.com/embed/${launches.links.youtube_id}`}
-        ></iframe>
+      <div className={boxVideo}>
+        <div className={video}>
+          <iframe
+            width="100%"
+            height="100%"
+            src={`https://www.youtube.com/embed/${launches.links.youtube_id}`}
+          ></iframe>
+        </div>
       </div>
       <Header titleText="More Information" />
       <div className={boxText}>
