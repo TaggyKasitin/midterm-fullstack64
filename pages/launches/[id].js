@@ -1,5 +1,4 @@
 import { useRouter } from "next/router";
-import Layout from "../../component/Layout";
 import {
   boxText,
   subText,
@@ -13,8 +12,11 @@ import {
 } from "../../styles/Detail.module.css";
 import Image from "next/image";
 import Link from "next/link";
-import Header from "../../component/Header";
-import TextDetails from "../../component/TextDetails";
+import dynamic from "next/dynamic";
+
+const Header = dynamic(import("../../component/Header"));
+const TextDetails = dynamic(import("../../component/TextDetails"));
+const Layout = dynamic(import("../../component/Layout"));
 
 function LaunchesDetail({ launches }) {
   const router = useRouter();
@@ -26,7 +28,17 @@ function LaunchesDetail({ launches }) {
       </span>
       <div className={boxImg}>
         <div className={img}>
-          <Image src={launches.links.mission_patch} layout="fill" />
+          {launches.flight_number == 106 || launches.flight_number == 107 ? (
+            launches.flight_number == 106 ? (
+              <Image src="/miss106.png" layout="fill" />
+            ) : (
+              <Image src="/miss107.png" layout="fill" />
+            )
+          ) : launches.links.mission_patch_small == null ? (
+            <Image src="/shuttle.png" layout="fill" />
+          ) : (
+            <Image src={launches.links?.mission_patch} layout="fill" />
+          )}
         </div>
       </div>
       <Header titleText="Details" />
@@ -53,15 +65,15 @@ function LaunchesDetail({ launches }) {
             <h1>Failure detail</h1>
             <TextDetails
               title="Reason"
-              text={launches.launch_failure_details.reason}
+              text={launches.launch_failure_details?.reason || ""}
             />
             <TextDetails
               title="Altitude"
-              text={launches.launch_failure_details.altitude}
+              text={launches.launch_failure_details?.altitude}
             />
             <TextDetails
               title="Times"
-              text={launches.launch_failure_details.time}
+              text={launches.launch_failure_details?.time}
             />
           </div>
         )}

@@ -30,6 +30,14 @@
 .logo {
   width: 40vw;
 }
+.boxLogo {
+  justify-content: center;
+  display: flex;
+  margin-top: 2vw;
+}
+.fill {
+  fill: #fff;
+} 
 
 .menu{
   position: relative;
@@ -74,7 +82,7 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding: 1em;
+  padding: 1rem;
   text-align: center;
 }
 
@@ -99,14 +107,21 @@
   .logo{
     width: 60vw;
   }
+  .nav{
+    padding: 1rem 0;
+  }
 }
 
 @media(max-width: 400px){
   .menu{
-    font-size: 0.6rem;
+    font-size: 4vw;
+    width: 35vw;
+    height: 3rem;
   }
   .activeMenu{
-    font-size: 0.6rem;
+    font-size: 4vw;
+    width: 35vw;
+    height: 3rem;
   }
 }
 

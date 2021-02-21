@@ -1,4 +1,7 @@
-module.exports = {
+const withBundleAnalyzer = require("@next/bundle-analyzer")({
+  enabled: process.env.ANALYZE === "true",
+});
+module.exports = withBundleAnalyzer({
   webpack(config, options) {
     config.resolve.alias = {
       ...config.resolve.alias,
@@ -12,6 +15,7 @@ module.exports = {
   images: {
     domains: [
       "imgur.com",
+      "i.imgur.com",
       "farm1.staticflickr.com",
       "farm2.staticflickr.com",
       "farm3.staticflickr.com",
@@ -25,4 +29,4 @@ module.exports = {
       "images2.imgbox.com",
     ],
   },
-};
+});

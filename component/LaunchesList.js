@@ -1,13 +1,16 @@
 import { useEffect, useRef, useState } from "react";
 import { useLaunches } from "../contexts/LaunchesContext";
-import LaunchesCard from "./LaunchesCard";
-import Search from "./Search";
 import { boxCard } from "../styles/Launches.module.css";
+import { load, boxLoad } from "../styles/Launches.module.css";
+import { line } from "../styles/Detail.module.css";
+import dynamic from "next/dynamic";
+import LaunchesCard from "./LaunchesCard";
+const Search = dynamic(import("./Search"));
 
 const LaunchesList = ({ Launches }) => {
   const { name, yarn, launchSuc } = useLaunches();
   const [page, setPage] = useState(1);
-  const perPage = 20;
+  const perPage = 12;
   let start = 0;
   const ref = useRef();
   let end = page * perPage;
@@ -17,11 +20,9 @@ const LaunchesList = ({ Launches }) => {
       ([entry]) => {
         // console.log(entry);
 
-        if (entry.isIntersecting) {
+        if (entry.isIntersecting && end < Launches.length) {
           //do your actions here
-          setPage(() => page + 1);
-          //   console.log(page);
-          //   console.log("It works!");
+          setPage((page) => page + 1);
         }
       },
       {
@@ -33,7 +34,7 @@ const LaunchesList = ({ Launches }) => {
     if (ref.current) {
       observer.observe(ref.current);
     }
-  }, [ref, page]);
+  }, [ref]);
 
   const launches = Launches.filter((data) => {
     return (
@@ -49,18 +50,21 @@ const LaunchesList = ({ Launches }) => {
 
   return (
     <>
-      {/* <Search /> */}
+      <Search />
       <div className={boxCard}>
         {launches.slice(start, end).map((launch) => (
           <div key={launch.flight_number}>
+            {/* <h1>{launch.mission_name}</h1> */}
             <LaunchesCard launch={launch} />
           </div>
         ))}
       </div>
       {Launches.length > end ? (
-        <h3 ref={ref}>Loading Posts...</h3>
+        <div className={boxLoad} ref={end > 120 ? null : ref}>
+          <div className={load}></div>
+        </div>
       ) : (
-        <h1>The end</h1>
+        <div ref={null} style={{ margin: "45px 0" }} className={line}></div>
       )}
     </>
   );

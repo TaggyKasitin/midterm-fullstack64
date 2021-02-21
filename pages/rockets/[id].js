@@ -1,15 +1,16 @@
 import { useRouter } from "next/router";
 import Image from "next/image";
-import Layout from "../../component/Layout";
-import Header from "../../component/Header";
-import TextDetails from "../../component/TextDetails";
 import { boxText, boxImg, imgSty } from "../../styles/Detail.module.css";
+import dynamic from "next/dynamic";
+const Header = dynamic(import("../../component/Header"));
+const TextDetails = dynamic(import("../../component/TextDetails"));
+const Layout = dynamic(import("../../component/Layout"));
+
 const rocketDetail = ({ rocket }) => {
   const router = useRouter();
   function formatN(num) {
     return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
   }
-  console.log(rocket);
   return (
     <Layout>
       <Header titleText="Details" />
@@ -45,7 +46,7 @@ const rocketDetail = ({ rocket }) => {
       <div className={boxImg}>
         {rocket.flickr_images.map((imgs) => (
           <div className={imgSty}>
-            <Image src={imgs} layout="fill" alt="Super Rocket" />
+            <Image src={imgs || ""} layout="fill" alt="Super Rocket" />
           </div>
         ))}
       </div>

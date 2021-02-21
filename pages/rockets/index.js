@@ -1,8 +1,7 @@
-import Layout from "../../component/Layout";
-import RocketCard from "../../component/RocketCard";
-
+import dynamic from "next/dynamic";
+const Layout = dynamic(import("../../component/Layout"));
+const RocketCard = dynamic(import("../../component/RocketCard"));
 const rocket = ({ data }) => {
-  console.log(data);
   return (
     <Layout>
       <RocketCard rocket={data} />

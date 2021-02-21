@@ -14,11 +14,12 @@
 .box{
   background-image: url("https://wallpaperboat.com/wp-content/uploads/2019/10/free-space-background-23-920x518.jpg");
   cursor: pointer;
+  background-color: #fff;
   box-shadow: 13px 15px 25px  rgb(0, 0, 0);
   border-radius: 10%;
   width: 220px;
   height: 230px;
-  padding: 10%;
+  padding: 8%;
   margin-top: 20px;
   z-index: 0;
   transform-style: preserve-3d;  
@@ -32,7 +33,12 @@
 }
 
 .hText{
-  font-size: 1.5rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden; 
+  text-overflow: ellipsis;
+  font-size: 1.3rem;
 }
 
 .text{
@@ -68,7 +74,73 @@
   color:white;
 }
 
+.wrapper{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding: 30px;
+  box-shadow: 0px 0px 10px rgba(0,0,0);
+  border-radius: 4px;
+  justify-content: space-around;
+}
 
+.wrapper .inputData
+{
+  height: 40px;
+  width: 320px;
+  position: relative;
+  
+}
+
+.wrapper .inputData .inputBox
+{
+  height: 100%;
+  color: #fff;
+  width: 100%;
+  border: none;
+  background: rgb(26, 26, 26);
+  font-size: 17px;
+  border-bottom: 2px solid #ff0;
+}
+
+.drop{
+  color: #fff;
+  width: 150px;
+  background: rgb(26, 26, 26);
+  font-size: 17px;
+  border-bottom: 2px solid #ff0;
+}
+.load{
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+
+.load:after {
+  content: " ";
+  display: block;
+  width: 26px;
+  height: 26px;
+  margin: 20px 0;
+  border-radius: 50%;
+  border: 6px solid #ff0;
+  border-color: #ff0 transparent #ff0 transparent;
+  animation: load 1.2s linear infinite;
+}
+
+@keyframes load {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.boxLoad{
+  display: flex;
+  justify-content: center;
+}
 
 
 @media(max-width: 1335px){
@@ -161,4 +233,13 @@
   .butLm{
     font-size: 2.5vw;
   }
+}
+
+@media(max-width: 475px){
+.wrapper .inputData .inputBox{
+  font-size: 4vw;
+}
+.drop{
+  font-size: 4vw;
+}
 }

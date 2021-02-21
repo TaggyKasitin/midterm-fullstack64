@@ -5,7 +5,6 @@ import {
   card,
   box,
   cardBack,
-  innerBox,
   hid,
   text,
   butLm,
@@ -18,15 +17,23 @@ const LaunchesCard = ({ launch }) => {
   const close = (e) => {
     setShowBack(false);
   };
-
-  console.log(showBack);
   return (
     <div className={box} onClick={showBack ? close : open}>
       <div className={showBack ? hid : card}>
-        <Image src={launch.links.mission_patch_small} layout="fill" />
+        {launch.flight_number == 106 || launch.flight_number == 107 ? (
+          launch.flight_number == 106 ? (
+            <Image src="/miss106.png" layout="fill" />
+          ) : (
+            <Image src="/miss107.png" layout="fill" />
+          )
+        ) : launch.links.mission_patch_small == null ? (
+          <Image src="/shuttle.png" layout="fill" />
+        ) : (
+          <Image src={launch.links?.mission_patch_small} layout="fill" />
+        )}
       </div>
       <div className={showBack ? cardBack : hid}>
-        <h1 className={hText}>{launch.mission_name}</h1>
+        <h1 className={hText}>{launch?.mission_name}</h1>
         <p className={text}>
           {launch.details == null ? "No Detail. " : launch.details}
         </p>
@@ -34,8 +41,6 @@ const LaunchesCard = ({ launch }) => {
           <button className={butLm}>Learn More</button>
         </Link>
       </div>
-      {/* {launch.mission_name},{launch.rocket.rocket_name},{" "}
-        {launch.flight_number} */}
     </div>
   );
 };
