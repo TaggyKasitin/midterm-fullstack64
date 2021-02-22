@@ -12,9 +12,9 @@
   }
 
 .box{
-  background-image: url("/free-space.jpg");
+  /* background-image: url("/free-space.jpg"); */
   cursor: pointer;
-  background-color: #fff;
+  background-color: rgb(118, 131, 131, 0.6);
   box-shadow: 13px 15px 25px  rgb(0, 0, 0);
   border-radius: 10%;
   width: 220px;
@@ -25,7 +25,7 @@
   transform-style: preserve-3d;  
 }
 .box:hover{
-  box-shadow: 13px 15px 25px rgba(255, 255, 255, 0.3);
+  box-shadow: 13px 15px 20px rgba(255, 255, 255, 0.7);
 }
 
 .hid{

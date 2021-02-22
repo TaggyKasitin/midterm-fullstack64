@@ -18,7 +18,7 @@ const RocketCard = ({ rocket }) => {
             <div className={coursePre}>
               {roc.rocket_id == "falcon1" ? (
                 <Image
-                  src="/Falcon-1.jpg"
+                  src="/image/Falcon-1.webp"
                   layout="fill"
                   objectFit="cover"
                   alt="Falcon1"

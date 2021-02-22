@@ -9,7 +9,7 @@ const Layout = (props) => (
     <Head>
       <title>Space</title>
       <meta charSet="UTF-8" />
-      <link rel="icon" href="/miss107.png" />
+      <link rel="icon" href="/image/miss107.webp" />
     </Head>
     <Logo />
     <Navbar />

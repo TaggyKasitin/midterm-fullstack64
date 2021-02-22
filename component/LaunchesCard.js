@@ -22,12 +22,12 @@ const LaunchesCard = ({ launch }) => {
       <div className={showBack ? hid : card}>
         {launch.flight_number == 106 || launch.flight_number == 107 ? (
           launch.flight_number == 106 ? (
-            <Image src="/miss106.png" layout="fill" alt="mission_106" />
+            <Image src="/image/miss106.webp" layout="fill" alt="mission_106" />
           ) : (
-            <Image src="/miss107.png" layout="fill" alt="mission_107" />
+            <Image src="/image/miss107.webp" layout="fill" alt="mission_107" />
           )
         ) : launch.links.mission_patch_small == null ? (
-          <Image src="/shuttle.png" layout="fill" alt="nonImg" />
+          <Image src="/image/shuttle.webp" layout="fill" alt="nonImg" />
         ) : (
           <Image
             src={launch.links?.mission_patch_small}

@@ -58,13 +58,13 @@ export default function Home() {
         </div>
         <div className={Timg}>
           <Image
-            src="/spaceXpic2.jpg"
+            src="/image/spaceXpic2.webp"
             width={500}
             height={375}
             className={image}
           />
           <Image
-            src="/spaceXpic4.jpg"
+            src="/image/spaceXpic4.webp"
             width={500}
             height={375}
             className={image}
