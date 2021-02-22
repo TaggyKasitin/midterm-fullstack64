@@ -17,12 +17,18 @@ const RocketCard = ({ rocket }) => {
           <div className={course}>
             <div className={coursePre}>
               {roc.rocket_id == "falcon1" ? (
-                <Image src="/Falcon-1.jpg" layout="fill" objectFit="cover" />
+                <Image
+                  src="/Falcon-1.jpg"
+                  layout="fill"
+                  objectFit="cover"
+                  alt="Falcon1"
+                />
               ) : (
                 <Image
                   src={roc.flickr_images[1]}
                   layout="fill"
                   objectFit="cover"
+                  alt={roc.rocket_name}
                 />
               )}
             </div>

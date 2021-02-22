@@ -1,7 +1,4 @@
-const withBundleAnalyzer = require("@next/bundle-analyzer")({
-  enabled: process.env.ANALYZE === "true",
-});
-module.exports = withBundleAnalyzer({
+module.exports = {
   webpack(config, options) {
     config.resolve.alias = {
       ...config.resolve.alias,
@@ -29,4 +26,4 @@ module.exports = withBundleAnalyzer({
       "images2.imgbox.com",
     ],
   },
-});
+};
