@@ -7,9 +7,9 @@ const Navbar = dynamic(import("./Nav"));
 const Layout = (props) => (
   <div className={container}>
     <Head>
-      <title>Create Next App</title>
+      <title>Space</title>
       <meta charSet="UTF-8" />
-      <link rel="icon" href="/favicon.ico" />
+      <link rel="icon" href="/miss107.png" />
     </Head>
     <Logo />
     <Navbar />

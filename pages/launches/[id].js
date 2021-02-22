@@ -64,15 +64,9 @@ function LaunchesDetail({ launches }) {
           <>
             <h1>
               Results:
-              {launches.launch_success ? (
-                <span className={subText} style={{ color: "green" }}>
-                  &nbsp;True
-                </span>
-              ) : (
-                <span className={subText} style={{ color: "red" }}>
-                  &nbsp;False
-                </span>
-              )}
+              <span className={subText} style={{ color: "red" }}>
+                &nbsp;False
+              </span>
             </h1>
             <div className={failTask}>
               <h1>Failure detail</h1>
